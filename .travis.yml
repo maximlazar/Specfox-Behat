@@ -7,16 +7,5 @@ before_script:
   # install behat, mink etc
   - composer install --no-interaction --prefer-source # Have to prefer source or hit github rate limit
   - git submodule update --init --recursive           # not really needed but makes sure submodules are there
-  - mkdir application/cache application/logs          # create cache and log dirs
-  - chmod 777 application/cache application/logs      # set permission
-  # db setup
-  - mysql -e 'create database lamu_test;'
-  - mv application/config/database.travis application/config/database.php
-  - mv application/config/auth.travis application/config/auth.php
-  - ./minion --task=migrations:run --up
-  # webserver setup
-  - php -S localhost:8000 httpdocs/index.php &
-  - sleep 3
 script:
-  - ./bin/behat --config application/tests/behat.yml  # run behat
-  - phpunit -c application/tests/phpunit.xml          # run php unit
+  - ./bin/behat --config behat.yml  # run behat
