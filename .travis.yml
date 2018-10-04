@@ -20,10 +20,3 @@ before_script:
   - git submodule update --init --recursive           # not really needed but makes sure submodules are there
 script:
   - vendor/bin/behat # run behat
-after_script:
-  provider: s3
-  access_key_id: AKIAJA27JMIPUVRQTTYA
-  secret_access_key: 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
-  bucket: travis-behat
-  skip_cleanup: true
-  region: eu-west-1
