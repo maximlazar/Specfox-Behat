@@ -8,4 +8,4 @@ before_script:
   - composer install --no-interaction --prefer-source # Have to prefer source or hit github rate limit
   - git submodule update --init --recursive           # not really needed but makes sure submodules are there
 script:
-  - ./bin/behat # run behat
+  - vendor/bin/behat # run behat
