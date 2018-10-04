@@ -8,6 +8,8 @@ addons:
   chrome: beta
 before_install:
   - # start your web application and listen on `localhost`
+  - curl -sS https://getcomposer.org/installer | php
+  - php composer.phar
   - "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --headless --disable-gpu --remote-debugging-port=9222 http://localhost &"
 before_script:
   # install behat, mink etc
