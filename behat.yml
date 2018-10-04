@@ -6,7 +6,7 @@ default:
            files_path: "%paths.base%/FilesForBehat/"
        #    selenium2:
        #        wd_host: "http://localhost:4455/wd/hub"
-           base_url: 'http://notem.ns-client.xyz/'
+           base_url: 'https://specfox.com/'
            sessions:
                 default:
                     selenium2:
