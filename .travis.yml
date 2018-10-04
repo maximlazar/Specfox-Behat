@@ -7,7 +7,7 @@ language: objective-c
 addons:
   artifacts: true
   paths:
-    - $(ls /Users/travis/build/maximlazar/Specfox-Behat/debug/*.png | tr "\n" ":")
+    - $(ls ./debug/*.png | tr "\n" ":")
   chrome: beta
 before_install:
   - # start your web application and listen on `localhost`
