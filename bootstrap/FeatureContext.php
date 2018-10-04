@@ -610,7 +610,7 @@ class FeatureContext extends Behat\MinkExtension\Context\MinkContext implements 
             $element->setValue($text);
             $element->focus();
  
-            $this->getSession()->wait(3 * 1000);
+            $this->getSession()->wait(2 * 1000);
             $this->getSession()->getDriver()->keyPress($element->getXpath(), 40);
  
         }
