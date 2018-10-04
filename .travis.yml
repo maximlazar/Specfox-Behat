@@ -13,7 +13,7 @@ before_script:
   # install behat, mink etc
   - curl -sS https://getcomposer.org/installer | php
   - php composer.phar
-  - composer install --no-interaction --prefer-source # Have to prefer source or hit github rate limit
+  - php composer.phar install --no-interaction --prefer-source # Have to prefer source or hit github rate limit
   - git submodule update --init --recursive           # not really needed but makes sure submodules are there
 script:
   - vendor/bin/behat # run behat
