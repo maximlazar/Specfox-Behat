@@ -22,4 +22,4 @@ script:
 addons:
   artifacts:
     paths:
-      - $(find ./debug/*.png -type f | tr "\n" ":")
+      - $(find ./debug/ -type f | tr "\n" ":")
