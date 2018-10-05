@@ -19,4 +19,4 @@ before_script:
 script:
   - vendor/bin/behat # run behat
 after_script:
-  - travis-artifacts upload --path logs --path ./debug/*.png
+  - travis-artifacts upload --path debug/*.png
