@@ -15,8 +15,9 @@ before_script:
   - php composer.phar
   - php composer.phar install --no-interaction --prefer-source # Have to prefer source or hit github rate limit
   - git submodule update --init --recursive           # not really needed but makes sure submodules are there
-  - gem install travis-artifacts
 script:
   - vendor/bin/behat # run behat
-after_script:
-  - travis-artifacts upload --path debug/*.png
+addons:
+  artifacts:
+    paths:
+      - $(find ./debug/*.png -type f | tr "\n" ":")
