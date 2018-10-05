@@ -1,17 +1,14 @@
 dist: trusty
 sudo: required
 language: php
-php:
-  - "7.1.19"
-services:
-  - mysql
-language: objective-c
 addons:
-  chrome: beta
+  chrome: stable
 before_install:
-  - # start your web application and listen on `localhost`
-  - "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --headless --disable-gpu --remote-debugging-port=9222 http://localhost &"
+  - "/opt/google/chome/chrome-sandbox --headless --disable-gpu --remote-debugging-port=9222 http://localhost &"
 before_script:
+  # ensure we have access to chrome
+  - "sudo chown root /opt/google/chrome/chrome-sandbox"
+  - "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
   # install behat, mink etc
   - curl -sS https://getcomposer.org/installer | php
   - php composer.phar
