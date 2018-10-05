@@ -1,23 +1,24 @@
 dist: trusty
 sudo: required
-language: objective-c
+language: php
 php:
-- 7.1.19
+  - "7.1.19"
 services:
-- mysql
+  - mysql
+language: objective-c
 addons:
   chrome: beta
 before_install:
-- 
-- "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --headless --disable-gpu
-  --remote-debugging-port=9222 http://localhost &"
+  - # start your web application and listen on `localhost`
+  - "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --headless --disable-gpu --remote-debugging-port=9222 http://localhost &"
 before_script:
-- curl -sS https://getcomposer.org/installer | php
-- php composer.phar
-- php composer.phar install --no-interaction --prefer-source
-- git submodule update --init --recursive
+  # install behat, mink etc
+  - curl -sS https://getcomposer.org/installer | php
+  - php composer.phar
+  - php composer.phar install --no-interaction --prefer-source # Have to prefer source or hit github rate limit
+  - git submodule update --init --recursive           # not really needed but makes sure submodules are there
 script:
-- vendor/bin/behat
+  - vendor/bin/behat # run behat
 deploy:
   provider: s3
   bucket: travis-behat
