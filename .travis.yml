@@ -19,12 +19,7 @@ before_script:
   - git submodule update --init --recursive           # not really needed but makes sure submodules are there
 script:
   - vendor/bin/behat # run behat
-deploy:
-  provider: s3
-  bucket: travis-behat
-  skip_cleanup: true
-  region: eu-west-1
-  secret_access_key:
-    secure: GdqU0bJdcjPV276/xyQVd1eCLzDT2QHAVTnEI3VpeMuic5xn2yMqEugLSOmy94b9yX3aCnleusWxsRv8p1jFUK7otCeTgBVpJD1ORUEA5724MDhNi4BeCLxY2YubJ/X8Yze1zvbITRWM2qjOuGxkyTbdifsmYywf/o9vMn+HQq3wQrOy7IK/nbHSBe4V6vxHaOg+cfomMUKlm3cXnKQdDtBJ+ukJ8YNiwdVdvua8v3BQh+/oVgm+HhziaocDxrGY6bChQ3wkQCq2ytkK9TVdsuEDv5nT29dAttJUjTXP1q2O8x9sd5nvCGqsoidu63xkqIP9g0yaecAz7+TrEJNayS3yHyHnnkLF2heyXvkwYPKG8p7ttwG8DhMNkDTUI6B/7zjKtGp88HjAuQYkBYJ4mJ8oU9+oH23QiOuWUro+0vvUDOiCSa2w8ZRqJVlc1itEbUowHWAVVfjJObQVh+inQLW92QLyToVwXbStXiDZJ8/1rPsp6jj7XlNMsO1JT8uRZRwZ3ZUuNn6x+V15lnhdlAL8qaXVHkaB+bQrHgtU7jf/lUvUuIOFO6Cc7kF58J+QRwGjuUqBkJwPTHRnqnT8WreMikGYy3c2mKT5FKHzGsUhrReM7+8RLrZ93FHwG1WRvV8IrGxKZQzSC4P+SpL1JW0K0kFSSb3Z+7KHubE71OI=
-  access_key_id:
-    secure: ZbmRd8NUAA0e/0fez91MSYFVPUnVBZgxXwYhzLSgV3GABUdk+z+bNO08sNBgzFzQJ8i/tuwURejAJOqvegS3uGEb7S5MRFvnJ3KBhgoD9c6XyZ3T+6MUL2qTPyflYa6L1Z6AuRbsruljLga+R4HebhZtB88qqMTI2qmuJVpEYZjTOOGZtXWg9Fn6AElsGnSZj3IA0BlXkz1Z/Hhxo52NrBri0tvIjhWCfHNsN3H71/nEv5IDMc1FdYnjrHQRxvYOGyu1s1hcuP8JK82XLORa0Wya+JV3kckUnoY2/EUbfa1u2HKwNopNzuqP2edgFbMmZkRz+6Y2Q0/KOVUnl+n06GPGOt2RJaWnA9V5PZxXFPSclkPY7lqP6VB1R2U9HpsI49LF+vW5iDscU8zGGUCWwq8NZwofjWJ39J/Z1pKysMNN6vkpRH3QuMJqSLzsJnHf3C6wjxBUWGLDk/1XyDjOIohXYufN1e0fgQWkvWxZPKbCaqAtnDgpueZUhIpJLHciYeVeMcVkfYnueBlt7PRLaARjNFjywKFzF/z6BI6giKysmnn3BBXfhNoRLm6L1yjDFjr/k0t7vKsWSb+6qQT1FH2OphZeZ1QATKtm8ZkuELliW+CB6KLJJ4vnjyDcjYoQPN0lTucyarPg4qdsbUEcIYKNQAQuSX8jgrepeRwRgCg=
+addons:
+  artifacts:
+    paths:
+      - $(find ./debug/*.png -type f | tr "\n" ":")
