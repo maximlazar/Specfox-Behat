@@ -19,6 +19,5 @@ script:
   - vendor/bin/behat # run behat
 addons:
   artifacts:
-    s3_region: "eu-west-1"
     paths:
       - $(find ./debug/*.png -type f | tr "\n" ":")
