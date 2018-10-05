@@ -1,6 +1,8 @@
 dist: trusty
 sudo: required
 language: php
+php:
+  - "7.1.19"
 addons:
   chrome: stable
 before_install:
