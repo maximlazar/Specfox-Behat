@@ -15,6 +15,7 @@ before_script:
   - php composer.phar
   - php composer.phar install --no-interaction --prefer-source # Have to prefer source or hit github rate limit
   - git submodule update --init --recursive           # not really needed but makes sure submodules are there
+  - curl -sS https://chromedriver.storage.googleapis.com/2.43/chromedriver_mac64.zip > chromedriver_mac64.zip && unzip chromedriver_mac64.zip
   - gem install travis-artifacts
 script:
   - vendor/bin/behat # run behat
