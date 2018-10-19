@@ -5,9 +5,6 @@ services:
   - mysql
 language: objective-c
 addons:
-  artifacts: true
-  paths:
-    - $(ls /Users/travis/build/maximlazar/Specfox-Behat/debug/*.png | tr "\n" ":")
   chrome: beta
 before_install:
   - # start your web application and listen on `localhost`
@@ -18,5 +15,8 @@ before_script:
   - php composer.phar
   - php composer.phar install --no-interaction --prefer-source # Have to prefer source or hit github rate limit
   - git submodule update --init --recursive           # not really needed but makes sure submodules are there
+  - gem install travis-artifacts
 script:
   - vendor/bin/behat # run behat
+after_script:
+  - travis-artifacts upload --path debug/*.png
