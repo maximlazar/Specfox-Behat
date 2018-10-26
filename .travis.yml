@@ -21,7 +21,7 @@ before_script:
   - brew cask install chromedriver
   - gem install travis-artifacts
   - "sh start-server.sh > /dev/null &"
-  - "phantomjs --webdriver=4455 > /dev/null &"
+  - "phantomjs --webdriver=4444 > /dev/null &"
 script:
   - vendor/bin/behat # run behat
 after_script:
