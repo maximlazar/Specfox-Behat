@@ -5,7 +5,7 @@ default:
            goutte: ~
            files_path: "%paths.base%/FilesForBehat/"
            selenium2:
-               wd_host: "http://localhost:4455/wd/hub"
+               wd_host: "http://localhost:4444/wd/hub"
            base_url: 'https://specfox.com/'
            sessions:
                 default:
