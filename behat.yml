@@ -2,7 +2,7 @@
 default:
    extensions:
        Behat\MinkExtension:
-           goutte: ~
+        #   goutte: ~
            files_path: "%paths.base%/FilesForBehat/"
         #   selenium2:
         #       wd_host: "http://localhost:4444/wd/hub"
