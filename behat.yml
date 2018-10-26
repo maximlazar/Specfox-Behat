@@ -7,10 +7,10 @@ default:
            selenium2:
                wd_host: "http://localhost:4455/wd/hub"
            base_url: 'https://specfox.com/'
-    #       sessions:
-     #           default:
-      #              selenium2:
-       #                 browser: chrome
+           sessions:
+                default:
+                    selenium2:
+                        browser: phantomjs
     #       sessions:
     #            my_session:                
     #                browser_stack: 
