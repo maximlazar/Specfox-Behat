@@ -11,12 +11,6 @@ default:
                 default:
                     selenium2:
                         browser: chrome
-    #       sessions:
-    #            my_session:                
-    #                browser_stack: 
-    #                    username: "netsells"
-    #                    access_key: "PJ1qQ4uF9BVcY3rnSLsT"
-    #                    capabilities: {"browser" :"chrome", "os": "Windows", "os_version": "10", "browserstack-debug": true}
        jarnaiz\JUnitFormatter\JUnitFormatterExtension:
            filename: report.xml
            outputDir: "%paths.base%/build/tests"
