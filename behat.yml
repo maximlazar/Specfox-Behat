@@ -4,13 +4,13 @@ default:
        Behat\MinkExtension:
         #   goutte: ~
            files_path: "%paths.base%/FilesForBehat/"
-           selenium2:
-               wd_host: "http://localhost:4444/wd/hub"
-        #   base_url: 'https://specfox.com/'
-        #   sessions:
-         #       default:
-           #         selenium2:
-             #           browser: chrome
+        #   selenium2:
+        #       wd_host: "http://localhost:4444/wd/hub"
+           base_url: 'https://specfox.com/'
+           sessions:
+                default:
+                    selenium2:
+                        browser: chrome
        jarnaiz\JUnitFormatter\JUnitFormatterExtension:
            filename: report.xml
            outputDir: "%paths.base%/build/tests"
