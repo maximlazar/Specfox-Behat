@@ -4,8 +4,8 @@ default:
        Behat\MinkExtension:
         #   goutte: ~
            files_path: "%paths.base%/FilesForBehat/"
-        #   selenium2:
-        #       wd_host: "http://localhost:4444/wd/hub"
+           selenium2:
+               wd_host: "http://localhost:4444/wd/hub"
            base_url: 'https://specfox.com/'
            sessions:
                 default:
