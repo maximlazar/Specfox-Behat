@@ -11,7 +11,7 @@ default:
                 default:
                     selenium2:
                         browser: chrome
-                        wd_host: http://127.0.0.1:4455/
+                        wd_host: http://127.0.0.1:4455/wd/host
                         capabilities:
                             chrome:
                                 switches:
