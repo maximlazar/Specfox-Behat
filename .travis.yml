@@ -11,9 +11,6 @@ before_install:
   - "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --headless --disable-gpu --remote-debugging-port=4444 http://localhost &"
 before_script:
   # install behat, mink etc
-  - "wget http://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.0.jar"
-  - "java -jar selenium-server-standalone-2.53.0.jar > /dev/null &"
-  - sleep 3
   - /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   - brew tap caskroom/cask
   - curl -sS https://getcomposer.org/installer | php
