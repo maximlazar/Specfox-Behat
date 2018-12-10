@@ -8,7 +8,7 @@
         "joomla-projects/selenium-server-standalone": "^3.14",
         "jordigiros/minkfieldrandomizer": "^1.1",
         "symfony/event-dispatcher": "~2.8",
-        "behat/symfony2-extension": "^2.1"
+        "behat/symfony2-extension": "^2.1",
         "devinci/devinci-behat-extension": "^0.1.0"
     },
     "config": {
