@@ -16,11 +16,3 @@ default:
                         - "--no-sandbox"
                         - "--disable-gpu"
            base_url: 'https://specfox.com/'
-   suites:
-       default:
-           contexts:
-               - FeatureContext
-               - Devinci\DevinciExtension\Context\DebugContext:
-                   asset_dump_path: "%paths.base%/debug"
-               - Devinci\DevinciExtension\Context\JavascriptContext:
-                   maximum_wait: 30
