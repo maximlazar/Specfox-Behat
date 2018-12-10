@@ -16,15 +16,6 @@ default:
                         - "--no-sandbox"
                         - "--disable-gpu"
            base_url: 'https://specfox.com/'
-       jarnaiz\JUnitFormatter\JUnitFormatterExtension:
-           filename: report.xml
-           outputDir: "%paths.base%/build/tests"
-       emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension:
-            name: html
-            renderer: Twig,Behat2
-            loop_break: true
-            print_args: true
-            print_outp: true
    suites:
        default:
            contexts:
@@ -32,7 +23,4 @@ default:
                - Devinci\DevinciExtension\Context\DebugContext:
                    asset_dump_path: "%paths.base%/debug"
                - Devinci\DevinciExtension\Context\JavascriptContext:
-                   maximum_wait: 30    
-#   formatters:
- #       html:
-  #          output_path: "%paths.base%/BehatReport"
+                   maximum_wait: 30
