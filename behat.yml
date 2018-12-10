@@ -2,23 +2,20 @@
 default:
    extensions:
        Behat\MinkExtension:
+           browser_name: chrome
            goutte: ~
+           javascript_session: selenium2
            files_path: "%paths.base%/FilesForBehat/"
-       #    selenium2:
-       #        wd_host: "http://localhost:4455/wd/hub"
+           selenium2:
+               wd_host: "http://127.0.0.1:4444/wd/hub"
+               capabilities:
+                  browser: chrome
+                  chrome:
+                     switches:
+                        - "--headless"
+                        - "--no-sandbox"
+                        - "--disable-gpu"
            base_url: 'https://specfox.com/'
-           sessions:
-                default:
-                    selenium2:
-                        browser: chrome
-                        wd_host: http://127.0.0.1:4444/wd/host
-                        capabilities:
-                            chrome:
-                                switches:
-                                    - "--headless"
-                                    - "--disable-gpu"
-                                    - "--window-size=1920,1080"
-                                    - "--no-sandbox"
        jarnaiz\JUnitFormatter\JUnitFormatterExtension:
            filename: report.xml
            outputDir: "%paths.base%/build/tests"
